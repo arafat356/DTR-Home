@@ -1,0 +1,2400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Abroad - Find Your Perfect University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .brand-color {
+            background: rgb(51, 179, 199);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgb(51, 179, 199) 0%, #2c3e50 100%);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .animate-slide {
+            animation: slide 30s linear infinite;
+        }
+        
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        /* New Hero Animations */
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .animate-fade-in-delay {
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+        
+        .animate-fade-in-delay-2 {
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Floating background elements */
+        
+        .animate-float-slow {
+            animation: floatSlow 8s ease-in-out infinite;
+        }
+        
+        .animate-float-medium {
+            animation: floatMedium 6s ease-in-out infinite;
+        }
+        
+        .animate-float-fast {
+            animation: floatFast 4s ease-in-out infinite;
+        }
+        
+        @keyframes floatSlow {
+            0%,
+            100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            33% {
+                transform: translateY(-20px) translateX(10px);
+            }
+            66% {
+                transform: translateY(10px) translateX(-10px);
+            }
+        }
+        
+        @keyframes floatMedium {
+            0%,
+            100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            50% {
+                transform: translateY(-15px) translateX(15px);
+            }
+        }
+        
+        @keyframes floatFast {
+            0%,
+            100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            25% {
+                transform: translateY(-10px) translateX(-5px);
+            }
+            75% {
+                transform: translateY(5px) translateX(10px);
+            }
+        }
+        /* Typewriter effect */
+        
+        .typewriter {
+            border-right: 2px solid #fbbf24;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%,
+            50% {
+                border-color: #fbbf24;
+            }
+            51%,
+            100% {
+                border-color: transparent;
+            }
+        }
+        /* Pulse animation for stats */
+        
+        .animate-pulse-slow {
+            animation: pulseSlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulseSlow {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 brand-color text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-center">
+                <div class="flex items-center space-x-3">
+                    <!-- Logo -->
+                    <div class="bg-white rounded-full p-2 shadow-lg">
+                        <svg width="32" height="32" viewBox="0 0 40 40" class="text-gray-800">
+                            <circle cx="20" cy="20" r="18" fill="rgb(51, 179, 199)" stroke="white" stroke-width="2"/>
+                            <path d="M12 16 L20 12 L28 16 L28 24 L20 28 L12 24 Z" fill="white"/>
+                            <circle cx="20" cy="20" r="3" fill="rgb(51, 179, 199)"/>
+                            <path d="M16 18 L24 18 M16 22 L24 22" stroke="rgb(51, 179, 199)" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <!-- Company Name -->
+                    <div>
+                        <h1 class="text-2xl font-bold tracking-wide">DTR Consultation</h1>
+                        <p class="text-xs opacity-90 tracking-wider">Your Gateway to Global Education</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white pt-24 relative overflow-hidden min-h-screen flex items-center">
+        <div class="container mx-auto px-6 py-4 text-center relative z-10">
+            <div class="floating text-4xl mb-3">🌍</div>
+            <h1 class="text-3xl md:text-4xl font-bold mb-3 animate-fade-in">Find Your Dream University</h1>
+            <p class="text-base md:text-lg mb-4 max-w-2xl mx-auto opacity-90 animate-fade-in-delay">
+                Discover world-class education opportunities across the globe. From prestigious universities to affordable programs, we'll help you find the perfect match.
+            </p>
+
+            <!-- Animated University Names -->
+            <div class="mb-4 h-10 flex items-center justify-center">
+                <div class="text-sm md:text-base font-medium opacity-80">
+                    <span class="inline-block">Study at: </span>
+                    <span id="universityText" class="inline-block text-yellow-300 font-bold text-base md:text-lg ml-2 min-w-[200px] md:min-w-[250px] text-left"></span>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-center mb-6 animate-fade-in-delay-2">
+                <button class="bg-white text-purple-600 px-5 py-2 rounded-full font-medium hover:bg-gray-100 transition transform hover:scale-105 hover:shadow-lg text-sm">
+                    Explore Universities
+                </button>
+                <button class="border-2 border-white text-white px-5 py-2 rounded-full font-medium hover:bg-white hover:text-purple-600 transition transform hover:scale-105 text-sm">
+                    Book Consultation
+                </button>
+            </div>
+
+            <!-- Success Statistics in Hero -->
+            <div class="animate-fade-in-delay-2">
+                <div class="text-center mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-1">Trusted by Students Worldwide</h3>
+                    <p class="text-sm md:text-base text-white opacity-90">Our proven track record speaks for itself</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-3 text-center border border-white border-opacity-30 hover:bg-opacity-30 transition-all duration-300 animate-pulse-slow">
+                        <div class="text-xl md:text-2xl font-bold mb-1 text-yellow-300" id="heroStat1">0</div>
+                        <div class="text-xs text-white opacity-90 font-medium">Students Placed</div>
+                        <div class="text-xs text-white opacity-75 mt-1">Since 2015</div>
+                    </div>
+
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-3 text-center border border-white border-opacity-30 hover:bg-opacity-30 transition-all duration-300 animate-pulse-slow" style="animation-delay: 0.5s;">
+                        <div class="text-xl md:text-2xl font-bold mb-1 text-yellow-300" id="heroStat2">0</div>
+                        <div class="text-xs text-white opacity-90 font-medium">Universities</div>
+                        <div class="text-xs text-white opacity-75 mt-1">Global Partners</div>
+                    </div>
+
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-3 text-center border border-white border-opacity-30 hover:bg-opacity-30 transition-all duration-300 animate-pulse-slow" style="animation-delay: 1s;">
+                        <div class="text-xl md:text-2xl font-bold mb-1 text-yellow-300" id="heroStat3">0%</div>
+                        <div class="text-xs text-white opacity-90 font-medium">Visa Success</div>
+                        <div class="text-xs text-white opacity-75 mt-1">Average Rate</div>
+                    </div>
+
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-3 text-center border border-white border-opacity-30 hover:bg-opacity-30 transition-all duration-300 animate-pulse-slow" style="animation-delay: 1.5s;">
+                        <div class="text-xl md:text-2xl font-bold mb-1 text-yellow-300" id="heroStat4">0</div>
+                        <div class="text-xs text-white opacity-90 font-medium">Countries</div>
+                        <div class="text-xs text-white opacity-75 mt-1">Study Destinations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full animate-float-slow"></div>
+            <div class="absolute top-40 right-20 w-16 h-16 bg-white bg-opacity-10 rounded-full animate-float-medium"></div>
+            <div class="absolute bottom-40 left-20 w-24 h-24 bg-white bg-opacity-10 rounded-full animate-float-fast"></div>
+            <div class="absolute bottom-20 right-10 w-12 h-12 bg-white bg-opacity-10 rounded-full animate-float-slow"></div>
+            <div class="absolute top-60 left-1/2 w-18 h-18 bg-white bg-opacity-10 rounded-full animate-float-medium"></div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="bg-white py-16 shadow-lg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Find Your Perfect Match</h2>
+                <p class="text-xl text-gray-600">Search universities, courses, and countries to discover your ideal study destination</p>
+            </div>
+
+            <!-- Search Navigation -->
+            <div class="bg-gray-50 rounded-xl p-6 mb-8">
+                <div class="flex flex-wrap justify-center gap-4 mb-6">
+                    <button id="countryTab" class="search-tab active bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition hover:bg-blue-700">
+                        🌍 Countries
+                    </button>
+                    <button id="universityTab" class="search-tab bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold transition hover:bg-gray-300">
+                        🏛️ Universities
+                    </button>
+                    <button id="courseTab" class="search-tab bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold transition hover:bg-gray-300">
+                        📚 Courses
+                    </button>
+                </div>
+
+                <!-- Search Input -->
+                <div class="max-w-2xl mx-auto relative">
+                    <input type="text" id="searchInput" placeholder="Search countries, universities, or courses..." class="w-full px-6 py-4 text-lg border-2 border-gray-300 rounded-full focus:border-blue-500 focus:outline-none transition">
+                    <button id="searchBtn" class="absolute right-2 top-2 bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Quick Filters -->
+                <div class="flex flex-wrap justify-center gap-2 mt-4" id="quickFilters">
+                    <button class="quick-filter bg-white text-gray-600 px-4 py-2 rounded-full text-sm border hover:bg-gray-50 transition" data-search="Engineering">
+                        Engineering
+                    </button>
+                    <button class="quick-filter bg-white text-gray-600 px-4 py-2 rounded-full text-sm border hover:bg-gray-50 transition" data-search="Business">
+                        Business
+                    </button>
+                    <button class="quick-filter bg-white text-gray-600 px-4 py-2 rounded-full text-sm border hover:bg-gray-50 transition" data-search="Medicine">
+                        Medicine
+                    </button>
+                    <button class="quick-filter bg-white text-gray-600 px-4 py-2 rounded-full text-sm border hover:bg-gray-50 transition" data-search="Computer Science">
+                        Computer Science
+                    </button>
+                    <button class="quick-filter bg-white text-gray-600 px-4 py-2 rounded-full text-sm border hover:bg-gray-50 transition" data-search="MBA">
+                        MBA
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div id="searchResults" class="hidden">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="resultsTitle" class="text-2xl font-bold text-gray-800">Search Results</h3>
+                    <span id="resultsCount" class="text-gray-600">0 results found</span>
+                </div>
+                <div id="resultsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Results will be populated here -->
+                </div>
+            </div>
+
+            <!-- Default Content (Popular Options) -->
+            <div id="defaultContent">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Popular Countries -->
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                            🌍 Popular Countries
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition cursor-pointer" onclick="searchFor('Canada')">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🇨🇦</span>
+                                    <span class="font-medium">Canada</span>
+                                </div>
+                                <span class="text-sm text-gray-500">500+ Unis</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition cursor-pointer" onclick="searchFor('Australia')">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🇦🇺</span>
+                                    <span class="font-medium">Australia</span>
+                                </div>
+                                <span class="text-sm text-gray-500">300+ Unis</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition cursor-pointer" onclick="searchFor('United Kingdom')">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🇬🇧</span>
+                                    <span class="font-medium">United Kingdom</span>
+                                </div>
+                                <span class="text-sm text-gray-500">400+ Unis</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition cursor-pointer" onclick="searchFor('United States')">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🇺🇸</span>
+                                    <span class="font-medium">United States</span>
+                                </div>
+                                <span class="text-sm text-gray-500">1000+ Unis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Universities -->
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-purple-800 mb-4 flex items-center">
+                            🏛️ Top Universities
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition cursor-pointer" onclick="searchFor('Harvard University')">
+                                <div>
+                                    <div class="font-medium">Harvard University</div>
+                                    <div class="text-sm text-gray-500">🇺🇸 United States</div>
+                                </div>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">#3 World</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition cursor-pointer" onclick="searchFor('University of Toronto')">
+                                <div>
+                                    <div class="font-medium">University of Toronto</div>
+                                    <div class="text-sm text-gray-500">🇨🇦 Canada</div>
+                                </div>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">#21 World</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition cursor-pointer" onclick="searchFor('University of Melbourne')">
+                                <div>
+                                    <div class="font-medium">University of Melbourne</div>
+                                    <div class="text-sm text-gray-500">🇦🇺 Australia</div>
+                                </div>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">#33 World</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition cursor-pointer" onclick="searchFor('Oxford University')">
+                                <div>
+                                    <div class="font-medium">Oxford University</div>
+                                    <div class="text-sm text-gray-500">🇬🇧 United Kingdom</div>
+                                </div>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">#4 World</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Popular Courses -->
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-green-800 mb-4 flex items-center">
+                            📚 Popular Courses
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition cursor-pointer" onclick="searchFor('Computer Science')">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">💻</span>
+                                    <span class="font-medium">Computer Science</span>
+                                </div>
+                                <span class="text-sm text-gray-500">High Demand</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition cursor-pointer" onclick="searchFor('Business Administration')">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📊</span>
+                                    <span class="font-medium">Business Administration</span>
+                                </div>
+                                <span class="text-sm text-gray-500">Popular</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition cursor-pointer" onclick="searchFor('Engineering')">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">⚙️</span>
+                                    <span class="font-medium">Engineering</span>
+                                </div>
+                                <span class="text-sm text-gray-500">High Salary</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition cursor-pointer" onclick="searchFor('Medicine')">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🏥</span>
+                                    <span class="font-medium">Medicine</span>
+                                </div>
+                                <span class="text-sm text-gray-500">Prestigious</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Countries Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Study Destinations</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose from top study destinations worldwide. Each country offers unique opportunities, world-class education, and unforgettable experiences.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Australia -->
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('Australia')">
+                    <div class="text-3xl mb-2">🇦🇺</div>
+                    <h3 class="text-sm font-semibold mb-1">Australia</h3>
+                    <p class="text-xs opacity-90 mb-3">Top 8 Universities</p>
+                    <button class="bg-white text-blue-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- Canada -->
+                <div class="bg-gradient-to-br from-red-500 to-red-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('Canada')">
+                    <div class="text-3xl mb-2">🇨🇦</div>
+                    <h3 class="text-sm font-semibold mb-1">Canada</h3>
+                    <p class="text-xs opacity-90 mb-3">Quality Education</p>
+                    <button class="bg-white text-red-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- China -->
+                <div class="bg-gradient-to-br from-yellow-500 to-red-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('China')">
+                    <div class="text-3xl mb-2">🇨🇳</div>
+                    <h3 class="text-sm font-semibold mb-1">China</h3>
+                    <p class="text-xs opacity-90 mb-3">Rising Excellence</p>
+                    <button class="bg-white text-red-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- Denmark -->
+                <div class="bg-gradient-to-br from-red-600 to-white text-red-600 p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('Denmark')">
+                    <div class="text-3xl mb-2">🇩🇰</div>
+                    <h3 class="text-sm font-semibold mb-1">Denmark</h3>
+                    <p class="text-xs opacity-90 mb-3">Innovation Hub</p>
+                    <button class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-medium hover:bg-red-700 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- Dubai/UAE -->
+                <div class="bg-gradient-to-br from-green-600 to-red-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('Dubai')">
+                    <div class="text-3xl mb-2">🇦🇪</div>
+                    <h3 class="text-sm font-semibold mb-1">Dubai</h3>
+                    <p class="text-xs opacity-90 mb-3">Global Business Hub</p>
+                    <button class="bg-white text-green-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- France -->
+                <div class="bg-gradient-to-br from-blue-600 to-red-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('France')">
+                    <div class="text-3xl mb-2">🇫🇷</div>
+                    <h3 class="text-sm font-semibold mb-1">France</h3>
+                    <p class="text-xs opacity-90 mb-3">Art & Culture</p>
+                    <button class="bg-white text-blue-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- Germany -->
+                <div class="bg-gradient-to-br from-gray-800 to-red-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('Germany')">
+                    <div class="text-3xl mb-2">🇩🇪</div>
+                    <h3 class="text-sm font-semibold mb-1">Germany</h3>
+                    <p class="text-xs opacity-90 mb-3">Engineering Excellence</p>
+                    <button class="bg-white text-gray-800 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- Hungary -->
+                <div class="bg-gradient-to-br from-red-600 to-green-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('Hungary')">
+                    <div class="text-3xl mb-2">🇭🇺</div>
+                    <h3 class="text-sm font-semibold mb-1">Hungary</h3>
+                    <p class="text-xs opacity-90 mb-3">Affordable Quality</p>
+                    <button class="bg-white text-red-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- India -->
+                <div class="bg-gradient-to-br from-orange-500 to-green-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('India')">
+                    <div class="text-3xl mb-2">🇮🇳</div>
+                    <h3 class="text-sm font-semibold mb-1">India</h3>
+                    <p class="text-xs opacity-90 mb-3">Tech & Innovation</p>
+                    <button class="bg-white text-orange-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- Japan -->
+                <div class="bg-gradient-to-br from-red-600 to-white text-red-600 p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('Japan')">
+                    <div class="text-3xl mb-2">🇯🇵</div>
+                    <h3 class="text-sm font-semibold mb-1">Japan</h3>
+                    <p class="text-xs opacity-90 mb-3">Technology Leader</p>
+                    <button class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-medium hover:bg-red-700 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- Malaysia -->
+                <div class="bg-gradient-to-br from-blue-600 to-red-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('Malaysia')">
+                    <div class="text-3xl mb-2">🇲🇾</div>
+                    <h3 class="text-sm font-semibold mb-1">Malaysia</h3>
+                    <p class="text-xs opacity-90 mb-3">Gateway to Asia</p>
+                    <button class="bg-white text-blue-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- New Zealand -->
+                <div class="bg-gradient-to-br from-blue-600 to-red-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('New Zealand')">
+                    <div class="text-3xl mb-2">🇳🇿</div>
+                    <h3 class="text-sm font-semibold mb-1">New Zealand</h3>
+                    <p class="text-xs opacity-90 mb-3">Natural Beauty</p>
+                    <button class="bg-white text-blue-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- Norway -->
+                <div class="bg-gradient-to-br from-red-600 to-blue-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('Norway')">
+                    <div class="text-3xl mb-2">🇳🇴</div>
+                    <h3 class="text-sm font-semibold mb-1">Norway</h3>
+                    <p class="text-xs opacity-90 mb-3">Nordic Excellence</p>
+                    <button class="bg-white text-red-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- Poland -->
+                <div class="bg-gradient-to-br from-red-600 to-white text-red-600 p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('Poland')">
+                    <div class="text-3xl mb-2">🇵🇱</div>
+                    <h3 class="text-sm font-semibold mb-1">Poland</h3>
+                    <p class="text-xs opacity-90 mb-3">European Gateway</p>
+                    <button class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-medium hover:bg-red-700 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- Qatar -->
+                <div class="bg-gradient-to-br from-purple-600 to-white text-purple-600 p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('Qatar')">
+                    <div class="text-3xl mb-2">🇶🇦</div>
+                    <h3 class="text-sm font-semibold mb-1">Qatar</h3>
+                    <p class="text-xs opacity-90 mb-3">Luxury Education</p>
+                    <button class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium hover:bg-purple-700 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- South Korea -->
+                <div class="bg-gradient-to-br from-blue-600 to-red-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('South Korea')">
+                    <div class="text-3xl mb-2">🇰🇷</div>
+                    <h3 class="text-sm font-semibold mb-1">South Korea</h3>
+                    <p class="text-xs opacity-90 mb-3">K-Innovation</p>
+                    <button class="bg-white text-blue-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- United Kingdom -->
+                <div class="bg-gradient-to-br from-blue-600 to-red-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('United Kingdom')">
+                    <div class="text-3xl mb-2">🇬🇧</div>
+                    <h3 class="text-sm font-semibold mb-1">United Kingdom</h3>
+                    <p class="text-xs opacity-90 mb-3">Historic Excellence</p>
+                    <button class="bg-white text-blue-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- United States -->
+                <div class="bg-gradient-to-br from-blue-600 to-red-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="showCountryInfo('United States')">
+                    <div class="text-3xl mb-2">🇺🇸</div>
+                    <h3 class="text-sm font-semibold mb-1">United States</h3>
+                    <p class="text-xs opacity-90 mb-3">World Leader</p>
+                    <button class="bg-white text-blue-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Explore
+                    </button>
+                </div>
+
+                <!-- Add University Button -->
+                <div class="bg-gradient-to-br from-gray-400 to-gray-600 text-white p-4 rounded-lg card-hover cursor-pointer text-center" onclick="addUniversity()">
+                    <div class="text-3xl mb-2">➕</div>
+                    <h3 class="text-sm font-semibold mb-1">Add More</h3>
+                    <p class="text-xs opacity-90 mb-3">Suggest Country</p>
+                    <button class="bg-white text-gray-600 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-100 transition">
+                        Suggest
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Why Choose Us?</h2>
+                <p class="text-xl text-gray-600">We make studying abroad simple and accessible</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-white rounded-lg shadow-lg card-hover">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold mb-3">Personalized Matching</h3>
+                    <p class="text-gray-600">Find universities that match your academic profile, budget, and career goals perfectly.</p>
+                </div>
+
+                <div class="text-center p-6 bg-white rounded-lg shadow-lg card-hover">
+                    <div class="text-4xl mb-4">📋</div>
+                    <h3 class="text-xl font-semibold mb-3">Application Support</h3>
+                    <p class="text-gray-600">Get expert guidance through every step of your application process.</p>
+                </div>
+
+                <div class="text-center p-6 bg-white rounded-lg shadow-lg card-hover">
+                    <div class="text-4xl mb-4">✈️</div>
+                    <h3 class="text-xl font-semibold mb-3">Visa Assistance</h3>
+                    <p class="text-gray-600">Complete visa support to ensure a smooth transition to your new country.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Reviews Section -->
+        <section class="mb-16 overflow-hidden">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">What Our Students Say</h2>
+                <p class="text-xl text-gray-600">Real experiences from students who achieved their dreams</p>
+            </div>
+
+            <div class="relative">
+                <div class="flex animate-slide space-x-6" id="reviewSlider">
+                    <!-- Review 1 -->
+                    <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                S
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                                <p class="text-sm text-gray-600">University of Melbourne, Australia</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            "DTR Consultation made my dream of studying in Australia come true! Their guidance through the application process was incredible, and I got accepted to my top choice university."
+                        </p>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                M
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Michael Chen</h4>
+                                <p class="text-sm text-gray-600">University of Toronto, Canada</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            "The visa assistance was outstanding! I was worried about the complex process, but their team handled everything professionally. Now I'm studying computer science in Toronto!"
+                        </p>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                A
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Aisha Patel</h4>
+                                <p class="text-sm text-gray-600">Oxford University, UK</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            "I never thought I could get into Oxford! DTR's personalized approach helped me craft the perfect application. Their support was invaluable throughout the entire journey."
+                        </p>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                D
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">David Kim</h4>
+                                <p class="text-sm text-gray-600">MIT, United States</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            "Getting into MIT seemed impossible, but DTR's expert guidance made it happen. They helped me showcase my strengths and navigate the competitive application process."
+                        </p>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                L
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Lisa Rodriguez</h4>
+                                <p class="text-sm text-gray-600">TU Munich, Germany</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            "Studying engineering in Germany was my dream. DTR not only helped with applications but also prepared me for the cultural transition. Excellent service!"
+                        </p>
+                    </div>
+
+                    <!-- Review 6 -->
+                    <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                R
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Raj Sharma</h4>
+                                <p class="text-sm text-gray-600">University of Tokyo, Japan</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            "The team understood my passion for robotics and matched me perfectly with Tokyo University. Their knowledge of international programs is exceptional!"
+                        </p>
+                    </div>
+
+                    <!-- Duplicate reviews for seamless loop -->
+                    <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                S
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                                <p class="text-sm text-gray-600">University of Melbourne, Australia</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            "DTR Consultation made my dream of studying in Australia come true! Their guidance through the application process was incredible, and I got accepted to my top choice university."
+                        </p>
+                    </div>
+
+                    <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                M
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Michael Chen</h4>
+                                <p class="text-sm text-gray-600">University of Toronto, Canada</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            "The visa assistance was outstanding! I was worried about the complex process, but their team handled everything professionally. Now I'm studying computer science in Toronto!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Get Started Today</h2>
+                    <p class="text-lg text-gray-600">Ready to begin your study abroad journey? Let's connect!</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <!-- Contact Form -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">General Inquiry Form</h3>
+                        <form id="inquiryForm" class="space-y-4">
+                            <div>
+                                <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Enter your full name">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="your.email@example.com">
+                            </div>
+
+                            <div>
+                                <label for="mobile" class="block text-sm font-medium text-gray-700 mb-1">Mobile Number *</label>
+                                <input type="tel" id="mobile" name="mobile" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="+1 (555) 123-4567">
+                            </div>
+
+                            <div>
+                                <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Country of Interest *</label>
+                                <select id="country" name="country" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                                    <option value="">Select a country</option>
+                                    <option value="Australia">🇦🇺 Australia</option>
+                                    <option value="Canada">🇨🇦 Canada</option>
+                                    <option value="China">🇨🇳 China</option>
+                                    <option value="Denmark">🇩🇰 Denmark</option>
+                                    <option value="Dubai">🇦🇪 Dubai/UAE</option>
+                                    <option value="France">🇫🇷 France</option>
+                                    <option value="Germany">🇩🇪 Germany</option>
+                                    <option value="Hungary">🇭🇺 Hungary</option>
+                                    <option value="India">🇮🇳 India</option>
+                                    <option value="Japan">🇯🇵 Japan</option>
+                                    <option value="Malaysia">🇲🇾 Malaysia</option>
+                                    <option value="New Zealand">🇳🇿 New Zealand</option>
+                                    <option value="Norway">🇳🇴 Norway</option>
+                                    <option value="Poland">🇵🇱 Poland</option>
+                                    <option value="Qatar">🇶🇦 Qatar</option>
+                                    <option value="South Korea">🇰🇷 South Korea</option>
+                                    <option value="United Kingdom">🇬🇧 United Kingdom</option>
+                                    <option value="United States">🇺🇸 United States</option>
+                                    <option value="Other">🌍 Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+                                <textarea id="message" name="message" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Tell us about your study goals, preferred programs, or any questions you have..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full brand-color text-white py-2 px-4 rounded-lg font-semibold hover:opacity-90 transition transform hover:scale-105">
+                                Send Inquiry
+                            </button>
+                        </form>
+
+                        <div class="mt-4 text-center text-xs text-gray-600">
+                            <p>🔒 Your information is secure and will only be used to contact you about study opportunities.</p>
+                        </div>
+                    </div>
+
+                    <!-- Student Image Section -->
+                    <div class="text-center">
+                        <div class="relative">
+                            <!-- Main Student Illustration -->
+                            <div class="bg-gradient-to-br from-blue-400 to-purple-600 rounded-full w-64 h-64 mx-auto flex items-center justify-center shadow-2xl">
+                                <svg width="160" height="160" viewBox="0 0 200 200" class="text-white">
+                                    <!-- Student figure -->
+                                    <circle cx="100" cy="70" r="25" fill="currentColor" opacity="0.9"/>
+                                    <rect x="75" y="95" width="50" height="60" rx="25" fill="currentColor" opacity="0.9"/>
+                                    <rect x="85" y="110" width="30" height="3" fill="rgba(255,255,255,0.3)"/>
+                                    <rect x="85" y="120" width="25" height="3" fill="rgba(255,255,255,0.3)"/>
+                                    
+                                    <!-- Graduation cap -->
+                                    <rect x="80" y="50" width="40" height="8" fill="currentColor"/>
+                                    <rect x="75" y="45" width="50" height="5" fill="currentColor"/>
+                                    <rect x="120" y="47" width="15" height="2" fill="currentColor"/>
+                                    
+                                    <!-- Books -->
+                                    <rect x="60" y="140" width="15" height="20" fill="rgba(255,255,255,0.8)"/>
+                                    <rect x="125" y="135" width="15" height="25" fill="rgba(255,255,255,0.8)"/>
+                                    
+                                    <!-- Globe -->
+                                    <circle cx="140" cy="80" r="12" fill="rgba(255,255,255,0.7)"/>
+                                    <path d="M130 80 Q140 70 150 80 Q140 90 130 80" fill="rgba(0,0,0,0.2)"/>
+                                    <path d="M135 75 Q140 85 145 75" fill="rgba(0,0,0,0.2)"/>
+                                </svg>
+                            </div>
+
+                            <!-- Floating Elements -->
+                            <div class="absolute -top-3 -left-3 bg-yellow-400 rounded-full w-10 h-10 flex items-center justify-center shadow-lg floating">
+                                <span class="text-lg">🎓</span>
+                            </div>
+                            <div class="absolute -top-2 -right-4 bg-green-400 rounded-full w-8 h-8 flex items-center justify-center shadow-lg floating" style="animation-delay: -2s;">
+                                <span class="text-sm">📚</span>
+                            </div>
+                            <div class="absolute -bottom-3 -left-4 bg-purple-400 rounded-full w-12 h-12 flex items-center justify-center shadow-lg floating" style="animation-delay: -4s;">
+                                <span class="text-lg">🌍</span>
+                            </div>
+                            <div class="absolute -bottom-2 -right-3 bg-blue-400 rounded-full w-8 h-8 flex items-center justify-center shadow-lg floating" style="animation-delay: -1s;">
+                                <span class="text-sm">✈️</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 space-y-3">
+                            <h3 class="text-xl font-bold text-gray-800">Join Thousands of Successful Students</h3>
+                            <p class="text-gray-600 text-sm max-w-md mx-auto">
+                                Take the first step towards your international education journey. Our expert consultants are here to guide you every step of the way.
+                            </p>
+
+                            <!-- Success Stats -->
+                            <div class="grid grid-cols-3 gap-3 mt-4">
+                                <div class="text-center p-3 bg-white rounded-lg shadow-md">
+                                    <div class="text-lg font-bold text-blue-600">5000+</div>
+                                    <div class="text-xs text-gray-600">Students Placed</div>
+                                </div>
+                                <div class="text-center p-3 bg-white rounded-lg shadow-md">
+                                    <div class="text-lg font-bold text-green-600">95%</div>
+                                    <div class="text-xs text-gray-600">Visa Success</div>
+                                </div>
+                                <div class="text-center p-3 bg-white rounded-lg shadow-md">
+                                    <div class="text-lg font-bold text-purple-600">18</div>
+                                    <div class="text-xs text-gray-600">Countries</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Services Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600">Comprehensive support for your study abroad journey</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl card-hover">
+                    <div class="text-3xl mb-4">🎓</div>
+                    <h3 class="text-xl font-semibold mb-3 text-blue-800">University Selection</h3>
+                    <p class="text-gray-700 mb-4">Expert guidance to choose the right university based on your profile, preferences, and career goals.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Profile assessment</li>
+                        <li>✓ University matching</li>
+                        <li>✓ Program recommendations</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl card-hover">
+                    <div class="text-3xl mb-4">📝</div>
+                    <h3 class="text-xl font-semibold mb-3 text-green-800">Application Assistance</h3>
+                    <p class="text-gray-700 mb-4">Complete support for your university applications, from documents to submission.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Document preparation</li>
+                        <li>✓ Essay writing support</li>
+                        <li>✓ Application review</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl card-hover">
+                    <div class="text-3xl mb-4">🛂</div>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-800">Visa Support</h3>
+                    <p class="text-gray-700 mb-4">End-to-end visa assistance to ensure smooth approval and travel preparation.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Visa documentation</li>
+                        <li>✓ Interview preparation</li>
+                        <li>✓ Travel guidance</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl card-hover">
+                    <div class="text-3xl mb-4">💰</div>
+                    <h3 class="text-xl font-semibold mb-3 text-orange-800">Scholarship Guidance</h3>
+                    <p class="text-gray-700 mb-4">Help you find and apply for scholarships to reduce your education costs.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Scholarship search</li>
+                        <li>✓ Application support</li>
+                        <li>✓ Financial planning</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl card-hover">
+                    <div class="text-3xl mb-4">📚</div>
+                    <h3 class="text-xl font-semibold mb-3 text-red-800">Test Preparation</h3>
+                    <p class="text-gray-700 mb-4">Comprehensive preparation for IELTS, TOEFL, GRE, GMAT, and other required tests.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Practice tests</li>
+                        <li>✓ Study materials</li>
+                        <li>✓ Expert coaching</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl card-hover">
+                    <div class="text-3xl mb-4">🏠</div>
+                    <h3 class="text-xl font-semibold mb-3 text-teal-800">Pre-Departure Support</h3>
+                    <p class="text-gray-700 mb-4">Complete preparation for your journey including accommodation and cultural orientation.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Accommodation assistance</li>
+                        <li>✓ Cultural orientation</li>
+                        <li>✓ Travel arrangements</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Country Info Modal -->
+    <div id="countryModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 max-w-2xl mx-4 max-h-96 overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="countryTitle" class="text-2xl font-bold"></h3>
+                <button onclick="closeCountryModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <div id="countryContent" class="text-gray-700"></div>
+            <div class="flex gap-3 mt-6">
+                <button class="brand-color text-white px-6 py-2 rounded-full hover:opacity-90 transition">
+                    Get More Information
+                </button>
+                <button class="bg-gray-200 text-gray-800 px-6 py-2 rounded-full hover:bg-gray-300 transition" onclick="closeCountryModal()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Bot -->
+    <div id="chatBot" class="fixed bottom-6 right-6 z-50">
+        <!-- Chat Toggle Button -->
+        <button id="chatToggle" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+            <svg id="chatIcon" width="32" height="32" viewBox="0 0 64 64" fill="currentColor">
+                <!-- Face -->
+                <circle cx="32" cy="28" r="18" fill="rgba(255,255,255,0.9)" stroke="currentColor" stroke-width="1"/>
+                
+                <!-- Hair -->
+                <path d="M16 20 Q32 8 48 20 Q48 15 32 10 Q16 15 16 20" fill="rgba(139,69,19,0.8)"/>
+                
+                <!-- Sunglasses -->
+                <rect x="18" y="22" width="28" height="12" rx="6" fill="rgba(0,0,0,0.8)"/>
+                <circle cx="24" cy="28" r="6" fill="rgba(0,0,0,0.9)"/>
+                <circle cx="40" cy="28" r="6" fill="rgba(0,0,0,0.9)"/>
+                <rect x="30" y="26" width="4" height="4" fill="rgba(0,0,0,0.8)"/>
+                
+                <!-- Nose -->
+                <circle cx="32" cy="32" r="1.5" fill="rgba(0,0,0,0.3)"/>
+                
+                <!-- Mouth (slight smile) -->
+                <path d="M28 38 Q32 42 36 38" stroke="rgba(0,0,0,0.6)" stroke-width="2" fill="none"/>
+                
+                <!-- Body/Shirt -->
+                <rect x="22" y="46" width="20" height="18" rx="10" fill="rgba(255,255,255,0.8)"/>
+                
+                <!-- Cool details -->
+                <circle cx="26" cy="24" r="1" fill="rgba(255,255,255,0.3)"/>
+                <circle cx="38" cy="24" r="1" fill="rgba(255,255,255,0.3)"/>
+            </svg>
+            <svg id="closeIcon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="hidden">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chatWindow" class="hidden absolute bottom-20 right-0 w-80 h-96 bg-white rounded-lg shadow-2xl border border-gray-200 flex flex-col">
+            <!-- Chat Header -->
+            <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 rounded-t-lg flex items-center space-x-3">
+                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                    <span class="text-sm font-bold">F57</span>
+                </div>
+                <div>
+                    <h3 class="font-semibold">F57 Study Assistant</h3>
+                    <p class="text-xs opacity-90">Ask me about studying abroad!</p>
+                </div>
+                <div class="ml-auto">
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div id="chatMessages" class="flex-1 p-4 overflow-y-auto space-y-3 bg-gray-50">
+                <div class="flex items-start space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                        F57
+                    </div>
+                    <div class="bg-white p-3 rounded-lg shadow-sm max-w-xs">
+                        <p class="text-sm text-gray-800">Hi! I'm F57, your study abroad assistant. I can help you with:</p>
+                        <ul class="text-xs text-gray-600 mt-2 space-y-1">
+                            <li>• University information</li>
+                            <li>• Country requirements</li>
+                            <li>• Application process</li>
+                            <li>• Visa guidance</li>
+                        </ul>
+                        <p class="text-sm text-gray-800 mt-2">What would you like to know?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Questions -->
+            <div id="quickQuestions" class="p-3 border-t border-gray-200 bg-white">
+                <p class="text-xs text-gray-600 mb-2">Quick questions:</p>
+                <div class="flex flex-wrap gap-1">
+                    <button class="quick-question bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs hover:bg-blue-200 transition" data-question="What are the requirements for studying in Canada?">
+                        Canada Requirements
+                    </button>
+                    <button class="quick-question bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs hover:bg-purple-200 transition" data-question="How much does it cost to study in Australia?">
+                        Australia Costs
+                    </button>
+                    <button class="quick-question bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs hover:bg-green-200 transition" data-question="What is the visa process like?">
+                        Visa Process
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="p-3 border-t border-gray-200 bg-white rounded-b-lg">
+                <div class="flex space-x-2">
+                    <input type="text" id="chatInput" placeholder="Type your question..." class="flex-1 px-3 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <button id="sendMessage" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-2 rounded-full hover:opacity-90 transition">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">DTR Consultation</h3>
+                    <p class="text-gray-400">Your Gateway to Global Education - Expert guidance for international study opportunities.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Universities</a></li>
+                        <li><a href="#" class="hover:text-white transition">Countries</a></li>
+                        <li><a href="#" class="hover:text-white transition">Services</a></li>
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">University Selection</a></li>
+                        <li><a href="#" class="hover:text-white transition">Application Support</a></li>
+                        <li><a href="#" class="hover:text-white transition">Visa Assistance</a></li>
+                        <li><a href="#" class="hover:text-white transition">Scholarship Guidance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 info@dtrconsultation.com</li>
+                        <li>📞 +1 (555) 123-4567</li>
+                        <li>📍 123 Education St, Learning City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 DTR Consultation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showCountryInfo(country) {
+            const modal = document.getElementById('countryModal');
+            const title = document.getElementById('countryTitle');
+            const content = document.getElementById('countryContent');
+
+            title.textContent = country;
+
+            const countryInfo = {
+                'Australia': `
+                    <div class="space-y-4">
+                        <p class="text-lg">🇦🇺 Study in Australia with world-class universities, beautiful landscapes, and excellent post-study work opportunities.</p>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">🏛️ Popular Universities for International Students:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>University of Melbourne</strong> - World Rank #33, Business, Engineering, Medicine</li>
+                                <li><strong>Australian National University</strong> - World Rank #34, Research, Politics</li>
+                                <li><strong>University of Sydney</strong> - World Rank #41, Law, Arts, Architecture</li>
+                                <li><strong>University of Queensland</strong> - World Rank #50, Science, Health</li>
+                                <li><strong>Monash University</strong> - World Rank #57, Pharmacy, Education</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">📝 English Requirements:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>IELTS:</strong> 6.5 overall (6.0 in each band) - Standard requirement</li>
+                                <li><strong>TOEFL:</strong> 79-94 iBT depending on university</li>
+                                <li><strong>PTE Academic:</strong> 58-65 overall</li>
+                                <li><strong>Duolingo:</strong> 105-120 (accepted by some universities)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <h4 class="font-semibold mb-2">✨ Why Choose Australia?</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div>✅ Post-study work visa (2-4 years)</div>
+                                <div>✅ High quality education system</div>
+                                <div>✅ Multicultural society</div>
+                                <div>✅ Beautiful lifestyle & climate</div>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'Canada': `
+                    <div class="space-y-4">
+                        <p class="text-lg">🇨🇦 Experience quality education in Canada with affordable tuition, multicultural environment, and pathways to permanent residency.</p>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">🏛️ Popular Universities for International Students:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>University of Toronto</strong> - World Rank #21, Medicine, Engineering, Business</li>
+                                <li><strong>McGill University</strong> - World Rank #31, Medicine, Law, Arts</li>
+                                <li><strong>University of British Columbia</strong> - World Rank #40, Science, Engineering</li>
+                                <li><strong>University of Waterloo</strong> - Top for Computer Science, Engineering</li>
+                                <li><strong>McMaster University</strong> - Health Sciences, Engineering</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">📝 English Requirements:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>IELTS:</strong> 6.5 overall (6.0 in each band) - Standard requirement</li>
+                                <li><strong>TOEFL:</strong> 86-100 iBT depending on university</li>
+                                <li><strong>CAEL:</strong> 60-70 overall</li>
+                                <li><strong>Duolingo:</strong> 120-130 (increasingly accepted)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-red-50 p-3 rounded-lg">
+                            <h4 class="font-semibold mb-2">✨ Why Choose Canada?</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div>✅ Pathway to permanent residency</div>
+                                <div>✅ Affordable tuition fees</div>
+                                <div>✅ Safe and welcoming society</div>
+                                <div>✅ Post-graduation work permit</div>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'United Kingdom': `
+                    <div class="space-y-4">
+                        <p class="text-lg">🇬🇧 Study in the UK with prestigious universities, rich history, and global recognition in business, law, and liberal arts.</p>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">🏛️ Popular Universities for International Students:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>University of Oxford</strong> - World Rank #4, All disciplines</li>
+                                <li><strong>University of Cambridge</strong> - World Rank #5, Sciences, Engineering</li>
+                                <li><strong>Imperial College London</strong> - World Rank #8, Science, Engineering</li>
+                                <li><strong>London School of Economics</strong> - Economics, Social Sciences</li>
+                                <li><strong>University College London</strong> - World Rank #9, Medicine, Arts</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">📝 English Requirements:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>IELTS:</strong> 6.5-7.0 overall (6.0-6.5 in each band)</li>
+                                <li><strong>TOEFL:</strong> 90-100 iBT</li>
+                                <li><strong>PTE Academic:</strong> 62-70</li>
+                                <li><strong>Cambridge:</strong> CAE Grade B or CPE Grade C</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <h4 class="font-semibold mb-2">✨ Why Choose UK?</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div>✅ World-renowned universities</div>
+                                <div>✅ Rich history & culture</div>
+                                <div>✅ Global recognition</div>
+                                <div>✅ Post-study work visa</div>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'United States': `
+                    <div class="space-y-4">
+                        <p class="text-lg">🇺🇸 Pursue your dreams in the USA with diverse academic opportunities, cutting-edge research, and extensive networking possibilities.</p>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">🏛️ Popular Universities for International Students:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>Massachusetts Institute of Technology</strong> - World Rank #1, Engineering, Technology</li>
+                                <li><strong>Harvard University</strong> - World Rank #3, Medicine, Business, Law</li>
+                                <li><strong>Stanford University</strong> - World Rank #2, Engineering, Business</li>
+                                <li><strong>University of California, Berkeley</strong> - Engineering, Sciences</li>
+                                <li><strong>California Institute of Technology</strong> - Science, Engineering</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">📝 English Requirements:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>IELTS:</strong> 6.5-7.5 overall</li>
+                                <li><strong>TOEFL:</strong> 90-110 iBT</li>
+                                <li><strong>SAT/ACT:</strong> Required for undergraduate programs</li>
+                                <li><strong>GRE/GMAT:</strong> Required for graduate programs</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <h4 class="font-semibold mb-2">✨ Why Choose USA?</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div>✅ World's top universities</div>
+                                <div>✅ Cutting-edge research</div>
+                                <div>✅ Diverse opportunities</div>
+                                <div>✅ Innovation & entrepreneurship</div>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'Germany': `
+                    <div class="space-y-4">
+                        <p class="text-lg">🇩🇪 Study in Germany with world-renowned engineering programs, strong industry connections, and excellent research opportunities.</p>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">🏛️ Popular Universities for International Students:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>Technical University of Munich</strong> - World Rank #50, Engineering</li>
+                                <li><strong>Ludwig Maximilian University</strong> - Medicine, Sciences</li>
+                                <li><strong>Heidelberg University</strong> - Medicine, Life Sciences</li>
+                                <li><strong>RWTH Aachen University</strong> - Engineering, Technology</li>
+                                <li><strong>University of Freiburg</strong> - Medicine, Natural Sciences</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">📝 English Requirements:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>IELTS:</strong> 6.0-6.5 for English-taught programs</li>
+                                <li><strong>TOEFL:</strong> 80-90 iBT for English programs</li>
+                                <li><strong>German (DSH/TestDaF):</strong> DSH-2 or TestDaF 4 for German programs</li>
+                                <li><strong>Note:</strong> Many Master's programs in English</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-semibold mb-2">✨ Why Choose Germany?</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div>✅ No tuition fees at public universities</div>
+                                <div>✅ Strong engineering programs</div>
+                                <div>✅ Excellent job opportunities</div>
+                                <div>✅ Central location in Europe</div>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'France': `
+                    <div class="space-y-4">
+                        <p class="text-lg">🇫🇷 Discover France's prestigious education system, rich culture, and excellence in arts, fashion, and engineering.</p>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">🏛️ Popular Universities for International Students:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>Sorbonne University</strong> - World Rank #72, Arts, Sciences</li>
+                                <li><strong>École Polytechnique</strong> - Engineering, Sciences</li>
+                                <li><strong>Sciences Po</strong> - Political Science, International Relations</li>
+                                <li><strong>HEC Paris</strong> - Business, Management</li>
+                                <li><strong>University of Paris</strong> - Medicine, Liberal Arts</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">📝 English Requirements:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>IELTS:</strong> 6.0-6.5 for English-taught programs</li>
+                                <li><strong>TOEFL:</strong> 79-90 iBT for English programs</li>
+                                <li><strong>French (DELF/DALF):</strong> B2-C1 for French programs</li>
+                                <li><strong>TCF:</strong> 400+ for French-taught courses</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <h4 class="font-semibold mb-2">✨ Why Choose France?</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div>✅ Rich cultural heritage</div>
+                                <div>✅ Affordable tuition fees</div>
+                                <div>✅ Excellence in arts & fashion</div>
+                                <div>✅ Central location in Europe</div>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'Japan': `
+                    <div class="space-y-4">
+                        <p class="text-lg">🇯🇵 Study in Japan with cutting-edge technology, unique culture, and excellence in robotics and engineering.</p>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">🏛️ Popular Universities for International Students:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>University of Tokyo</strong> - World Rank #23, Engineering, Sciences</li>
+                                <li><strong>Kyoto University</strong> - World Rank #36, Sciences, Medicine</li>
+                                <li><strong>Osaka University</strong> - Engineering, Medicine</li>
+                                <li><strong>Tokyo Institute of Technology</strong> - Engineering, Technology</li>
+                                <li><strong>Waseda University</strong> - Business, International Studies</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">📝 English Requirements:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>IELTS:</strong> 6.0-6.5 for English programs</li>
+                                <li><strong>TOEFL:</strong> 79-90 iBT for English programs</li>
+                                <li><strong>Japanese (JLPT):</strong> N2-N1 for Japanese programs</li>
+                                <li><strong>EJU:</strong> Examination for Japanese University Admission</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-red-50 p-3 rounded-lg">
+                            <h4 class="font-semibold mb-2">✨ Why Choose Japan?</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div>✅ Technology & innovation leader</div>
+                                <div>✅ Unique cultural experience</div>
+                                <div>✅ Strong job market</div>
+                                <div>✅ Excellent research facilities</div>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'South Korea': `
+                    <div class="space-y-4">
+                        <p class="text-lg">🇰🇷 Explore South Korea's advanced education system, technology innovation, and vibrant K-culture.</p>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">🏛️ Popular Universities for International Students:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>Seoul National University</strong> - World Rank #36, All disciplines</li>
+                                <li><strong>KAIST</strong> - World Rank #41, Science & Technology</li>
+                                <li><strong>Yonsei University</strong> - Business, Medicine, Liberal Arts</li>
+                                <li><strong>Korea University</strong> - Business, Law, Liberal Arts</li>
+                                <li><strong>Pohang University of Science and Technology</strong> - Engineering</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">📝 English Requirements:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>IELTS:</strong> 6.0-6.5 for English programs</li>
+                                <li><strong>TOEFL:</strong> 79-90 iBT for English programs</li>
+                                <li><strong>Korean (TOPIK):</strong> Level 3-4 for Korean programs</li>
+                                <li><strong>KSAT:</strong> Korean Scholastic Aptitude Test</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <h4 class="font-semibold mb-2">✨ Why Choose South Korea?</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div>✅ Technology & innovation hub</div>
+                                <div>✅ Strong job market</div>
+                                <div>✅ Vibrant culture (K-pop, K-drama)</div>
+                                <div>✅ Excellent research facilities</div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            };
+
+            content.innerHTML = countryInfo[country] || '<p>More detailed information coming soon!</p>';
+            modal.classList.remove('hidden');
+        }
+
+        function closeCountryModal() {
+            document.getElementById('countryModal').classList.add('hidden');
+        }
+
+        function addUniversity() {
+            alert('Thank you for your interest! Please contact us at info@dtrconsultation.com to suggest a new country or university.');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('countryModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCountryModal();
+            }
+        });
+
+        // University names animation
+        const universities = [
+            "Harvard University",
+            "Stanford University",
+            "MIT",
+            "Oxford University",
+            "Cambridge University",
+            "University of Toronto",
+            "University of Melbourne",
+            "ETH Zurich",
+            "University of Tokyo",
+            "National University of Singapore",
+            "London School of Economics",
+            "Yale University",
+            "Princeton University",
+            "University of Sydney",
+            "McGill University"
+        ];
+
+        let currentUniversityIndex = 0;
+        const universityTextElement = document.getElementById('universityText');
+
+        function typeWriter(text, element, callback) {
+            let i = 0;
+            element.textContent = '';
+            element.classList.add('typewriter');
+
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 100);
+                } else {
+                    setTimeout(() => {
+                        element.classList.remove('typewriter');
+                        if (callback) callback();
+                    }, 2000);
+                }
+            }
+            type();
+        }
+
+        function eraseText(element, callback) {
+            const text = element.textContent;
+            let i = text.length;
+
+            function erase() {
+                if (i > 0) {
+                    element.textContent = text.substring(0, i - 1);
+                    i--;
+                    setTimeout(erase, 50);
+                } else {
+                    if (callback) callback();
+                }
+            }
+            erase();
+        }
+
+        function cycleUniversities() {
+            const currentUniversity = universities[currentUniversityIndex];
+
+            typeWriter(currentUniversity, universityTextElement, () => {
+                setTimeout(() => {
+                    eraseText(universityTextElement, () => {
+                        currentUniversityIndex = (currentUniversityIndex + 1) % universities.length;
+                        setTimeout(cycleUniversities, 500);
+                    });
+                }, 1500);
+            });
+        }
+
+        // Start the university animation after page load
+        setTimeout(cycleUniversities, 1000);
+
+        // Animate statistics counter
+        function animateCounter(elementId, targetValue, suffix = '') {
+            const element = document.getElementById(elementId);
+            const startValue = 0;
+            const duration = 2000;
+            const increment = targetValue / (duration / 16);
+            let currentValue = startValue;
+
+            const timer = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= targetValue) {
+                    currentValue = targetValue;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(currentValue) + suffix;
+            }, 16);
+        }
+
+        // Intersection Observer for hero statistics animation
+        const heroStatsSection = document.querySelector('.hero-bg');
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Delay the animation to start after other hero animations
+                    setTimeout(() => {
+                        animateCounter('heroStat1', 8500, '+');
+                        animateCounter('heroStat2', 500, '+');
+                        animateCounter('heroStat3', 95, '%');
+                        animateCounter('heroStat4', 18);
+                    }, 2000);
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        if (heroStatsSection) {
+            heroObserver.observe(heroStatsSection);
+        }
+
+        // Handle form submission
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('fullName'),
+                email: formData.get('email'),
+                mobile: formData.get('mobile'),
+                country: formData.get('country'),
+                message: formData.get('message') || 'No additional message'
+            };
+
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Simulate form submission (in real app, this would send to server)
+            setTimeout(() => {
+                // Show success message
+                alert(`Thank you, ${data.name}! Your inquiry has been received. We'll contact you at ${data.email} within 24 hours to discuss study opportunities in ${data.country}.`);
+
+                // Reset form
+                this.reset();
+
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+
+                // Optional: Show success animation
+                submitBtn.classList.add('bg-green-500');
+                submitBtn.textContent = 'Sent Successfully!';
+                setTimeout(() => {
+                    submitBtn.classList.remove('bg-green-500');
+                    submitBtn.textContent = originalText;
+                }, 2000);
+
+            }, 1500);
+        });
+
+        // Search Functionality
+        const searchTabs = document.querySelectorAll('.search-tab');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchResults = document.getElementById('searchResults');
+        const defaultContent = document.getElementById('defaultContent');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const resultsTitle = document.getElementById('resultsTitle');
+        const resultsCount = document.getElementById('resultsCount');
+        const quickFilters = document.querySelectorAll('.quick-filter');
+
+        let currentSearchType = 'country';
+
+        // Sample data for search
+        const searchData = {
+            countries: [{
+                name: 'Canada',
+                flag: '🇨🇦',
+                universities: 500,
+                description: 'Quality education with pathways to permanent residency',
+                highlights: ['Post-graduation work permit', 'Multicultural society', 'Affordable tuition']
+            }, {
+                name: 'Australia',
+                flag: '🇦🇺',
+                universities: 300,
+                description: 'World-class universities with beautiful lifestyle',
+                highlights: ['Post-study work visa', 'High quality of life', 'Strong job market']
+            }, {
+                name: 'United Kingdom',
+                flag: '🇬🇧',
+                universities: 400,
+                description: 'Historic universities with global recognition',
+                highlights: ['World-renowned institutions', 'Rich history & culture', 'Graduate Route visa']
+            }, {
+                name: 'United States',
+                flag: '🇺🇸',
+                universities: 1000,
+                description: 'Top universities with cutting-edge research',
+                highlights: ['World\'s best universities', 'Innovation hub', 'Diverse opportunities']
+            }, {
+                name: 'Germany',
+                flag: '🇩🇪',
+                universities: 250,
+                description: 'Free education with strong engineering programs',
+                highlights: ['No tuition fees', 'Engineering excellence', 'Job opportunities']
+            }, {
+                name: 'France',
+                flag: '🇫🇷',
+                universities: 200,
+                description: 'Rich culture with affordable education',
+                highlights: ['Cultural heritage', 'Affordable fees', 'Arts & fashion']
+            }, {
+                name: 'Japan',
+                flag: '🇯🇵',
+                universities: 180,
+                description: 'Technology leader with unique culture',
+                highlights: ['Technology innovation', 'Research facilities', 'Cultural experience']
+            }, {
+                name: 'South Korea',
+                flag: '🇰🇷',
+                universities: 150,
+                description: 'Innovation hub with vibrant K-culture',
+                highlights: ['Technology advancement', 'Strong economy', 'K-culture experience']
+            }, {
+                name: 'New Zealand',
+                flag: '🇳🇿',
+                universities: 80,
+                description: 'Beautiful environment with quality education',
+                highlights: ['Natural beauty', 'Safe society', 'Work opportunities']
+            }, {
+                name: 'Netherlands',
+                flag: '🇳🇱',
+                universities: 120,
+                description: 'High-quality education in English',
+                highlights: ['English programs', 'Innovation', 'Central Europe location']
+            }],
+            universities: [{
+                name: 'Harvard University',
+                country: 'United States',
+                flag: '🇺🇸',
+                rank: '#3 World',
+                programs: ['Medicine', 'Business', 'Law'],
+                tuition: '$50,000/year'
+            }, {
+                name: 'University of Toronto',
+                country: 'Canada',
+                flag: '🇨🇦',
+                rank: '#21 World',
+                programs: ['Engineering', 'Medicine', 'Business'],
+                tuition: '$25,000/year'
+            }, {
+                name: 'University of Melbourne',
+                country: 'Australia',
+                flag: '🇦🇺',
+                rank: '#33 World',
+                programs: ['Business', 'Engineering', 'Medicine'],
+                tuition: '$35,000/year'
+            }, {
+                name: 'Oxford University',
+                country: 'United Kingdom',
+                flag: '🇬🇧',
+                rank: '#4 World',
+                programs: ['All disciplines'],
+                tuition: '$45,000/year'
+            }, {
+                name: 'MIT',
+                country: 'United States',
+                flag: '🇺🇸',
+                rank: '#1 World',
+                programs: ['Engineering', 'Technology', 'Science'],
+                tuition: '$55,000/year'
+            }, {
+                name: 'Stanford University',
+                country: 'United States',
+                flag: '🇺🇸',
+                rank: '#2 World',
+                programs: ['Engineering', 'Business', 'Medicine'],
+                tuition: '$52,000/year'
+            }, {
+                name: 'University of Cambridge',
+                country: 'United Kingdom',
+                flag: '🇬🇧',
+                rank: '#5 World',
+                programs: ['Sciences', 'Engineering', 'Medicine'],
+                tuition: '$42,000/year'
+            }, {
+                name: 'McGill University',
+                country: 'Canada',
+                flag: '🇨🇦',
+                rank: '#31 World',
+                programs: ['Medicine', 'Law', 'Arts'],
+                tuition: '$22,000/year'
+            }, {
+                name: 'University of Sydney',
+                country: 'Australia',
+                flag: '🇦🇺',
+                rank: '#41 World',
+                programs: ['Law', 'Arts', 'Architecture'],
+                tuition: '$32,000/year'
+            }, {
+                name: 'Technical University of Munich',
+                country: 'Germany',
+                flag: '🇩🇪',
+                rank: '#50 World',
+                programs: ['Engineering', 'Technology'],
+                tuition: '$3,000/year'
+            }, {
+                name: 'University of Tokyo',
+                country: 'Japan',
+                flag: '🇯🇵',
+                rank: '#23 World',
+                programs: ['Engineering', 'Sciences'],
+                tuition: '$8,000/year'
+            }, {
+                name: 'Seoul National University',
+                country: 'South Korea',
+                flag: '🇰🇷',
+                rank: '#36 World',
+                programs: ['All disciplines'],
+                tuition: '$6,000/year'
+            }],
+            courses: [{
+                name: 'Computer Science',
+                icon: '💻',
+                demand: 'High Demand',
+                salary: '$80,000+',
+                duration: '3-4 years',
+                countries: ['USA', 'Canada', 'UK', 'Australia']
+            }, {
+                name: 'Business Administration',
+                icon: '📊',
+                demand: 'Popular',
+                salary: '$65,000+',
+                duration: '3-4 years',
+                countries: ['USA', 'UK', 'Canada', 'Australia']
+            }, {
+                name: 'Engineering',
+                icon: '⚙️',
+                demand: 'High Salary',
+                salary: '$75,000+',
+                duration: '4 years',
+                countries: ['Germany', 'USA', 'Canada', 'Australia']
+            }, {
+                name: 'Medicine',
+                icon: '🏥',
+                demand: 'Prestigious',
+                salary: '$120,000+',
+                duration: '6-8 years',
+                countries: ['UK', 'Australia', 'Canada', 'Germany']
+            }, {
+                name: 'Data Science',
+                icon: '📈',
+                demand: 'Trending',
+                salary: '$85,000+',
+                duration: '2-3 years',
+                countries: ['USA', 'Canada', 'UK', 'Netherlands']
+            }, {
+                name: 'MBA',
+                icon: '🎓',
+                demand: 'Leadership',
+                salary: '$100,000+',
+                duration: '1-2 years',
+                countries: ['USA', 'UK', 'Canada', 'France']
+            }, {
+                name: 'Artificial Intelligence',
+                icon: '🤖',
+                demand: 'Emerging',
+                salary: '$90,000+',
+                duration: '2-4 years',
+                countries: ['USA', 'Canada', 'UK', 'Germany']
+            }, {
+                name: 'Psychology',
+                icon: '🧠',
+                demand: 'Growing',
+                salary: '$55,000+',
+                duration: '3-4 years',
+                countries: ['USA', 'UK', 'Australia', 'Canada']
+            }, {
+                name: 'International Relations',
+                icon: '🌍',
+                demand: 'Diplomatic',
+                salary: '$60,000+',
+                duration: '3-4 years',
+                countries: ['UK', 'USA', 'France', 'Germany']
+            }, {
+                name: 'Architecture',
+                icon: '🏗️',
+                demand: 'Creative',
+                salary: '$70,000+',
+                duration: '5 years',
+                countries: ['USA', 'UK', 'Germany', 'Netherlands']
+            }]
+        };
+
+        // Tab switching functionality
+        searchTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                searchTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-blue-600', 'text-white');
+                    t.classList.add('bg-gray-200', 'text-gray-700');
+                });
+
+                // Add active class to clicked tab
+                this.classList.add('active', 'bg-blue-600', 'text-white');
+                this.classList.remove('bg-gray-200', 'text-gray-700');
+
+                // Update search type
+                if (this.id === 'countryTab') currentSearchType = 'country';
+                else if (this.id === 'universityTab') currentSearchType = 'university';
+                else if (this.id === 'courseTab') currentSearchType = 'course';
+
+                // Update placeholder
+                updatePlaceholder();
+
+                // Clear search and show default content
+                searchInput.value = '';
+                showDefaultContent();
+            });
+        });
+
+        function updatePlaceholder() {
+            const placeholders = {
+                'country': 'Search countries like Canada, Australia, UK...',
+                'university': 'Search universities like Harvard, Oxford, MIT...',
+                'course': 'Search courses like Computer Science, MBA, Engineering...'
+            };
+            searchInput.placeholder = placeholders[currentSearchType];
+        }
+
+        // Search functionality
+        function performSearch(query) {
+            if (!query.trim()) {
+                showDefaultContent();
+                return;
+            }
+
+            const results = [];
+            const searchTerm = query.toLowerCase();
+
+            if (currentSearchType === 'country') {
+                results.push(...searchData.countries.filter(item =>
+                    item.name.toLowerCase().includes(searchTerm) ||
+                    item.description.toLowerCase().includes(searchTerm)
+                ));
+            } else if (currentSearchType === 'university') {
+                results.push(...searchData.universities.filter(item =>
+                    item.name.toLowerCase().includes(searchTerm) ||
+                    item.country.toLowerCase().includes(searchTerm) ||
+                    item.programs.some(program => program.toLowerCase().includes(searchTerm))
+                ));
+            } else if (currentSearchType === 'course') {
+                results.push(...searchData.courses.filter(item =>
+                    item.name.toLowerCase().includes(searchTerm) ||
+                    item.countries.some(country => country.toLowerCase().includes(searchTerm))
+                ));
+            }
+
+            displayResults(results, query);
+        }
+
+        function displayResults(results, query) {
+            if (results.length === 0) {
+                showNoResults(query);
+                return;
+            }
+
+            defaultContent.classList.add('hidden');
+            searchResults.classList.remove('hidden');
+
+            resultsTitle.textContent = `Search Results for "${query}"`;
+            resultsCount.textContent = `${results.length} result${results.length !== 1 ? 's' : ''} found`;
+
+            resultsContainer.innerHTML = '';
+
+            results.forEach(item => {
+                const resultCard = createResultCard(item);
+                resultsContainer.appendChild(resultCard);
+            });
+        }
+
+        function createResultCard(item) {
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1';
+
+            if (currentSearchType === 'country') {
+                card.innerHTML = `
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-4">${item.flag}</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">${item.name}</h3>
+                            <p class="text-sm text-gray-600">${item.universities}+ Universities</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">${item.description}</p>
+                    <div class="space-y-2 mb-4">
+                        ${item.highlights.map(highlight => `
+                            <div class="flex items-center text-sm text-gray-600">
+                                <span class="text-green-500 mr-2">✓</span>
+                                ${highlight}
+                            </div>
+                        `).join('')}
+                    </div>
+                    <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition" onclick="showCountryInfo('${item.name}')">
+                        Learn More
+                    </button>
+                `;
+            } else if (currentSearchType === 'university') {
+                card.innerHTML = `
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-3">${item.flag}</span>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">${item.name}</h3>
+                                <p class="text-sm text-gray-600">${item.country}</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">${item.rank}</span>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-sm text-gray-600 mb-2">Popular Programs:</p>
+                        <div class="flex flex-wrap gap-1">
+                            ${item.programs.map(program => `
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">${program}</span>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-semibold text-green-600">${item.tuition}</span>
+                        <button class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-purple-700 transition">
+                            Apply Now
+                        </button>
+                    </div>
+                `;
+            } else if (currentSearchType === 'course') {
+                card.innerHTML = `
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-4">${item.icon}</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">${item.name}</h3>
+                            <p class="text-sm text-gray-600">${item.demand}</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">Average Salary:</span>
+                            <span class="font-semibold text-green-600">${item.salary}</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">Duration:</span>
+                            <span class="font-semibold">${item.duration}</span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-sm text-gray-600 mb-2">Popular Countries:</p>
+                        <div class="flex flex-wrap gap-1">
+                            ${item.countries.map(country => `
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">${country}</span>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <button class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
+                        Find Programs
+                    </button>
+                `;
+            }
+            
+            return card;
+        }
+
+        function showNoResults(query) {
+            defaultContent.classList.add('hidden');
+            searchResults.classList.remove('hidden');
+            
+            resultsTitle.textContent = `No results found for "${query}"`;
+            resultsCount.textContent = '0 results found';
+            
+            resultsContainer.innerHTML = `
+                <div class="col-span-full text-center py-12">
+                    <div class="text-6xl mb-4">🔍</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">No results found</h3>
+                    <p class="text-gray-600 mb-6">Try searching with different keywords or browse our popular options below.</p>
+                    <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition" onclick="showDefaultContent()">
+                        Browse Popular Options
+                    </button>
+                </div>
+            `;
+        }
+
+        function showDefaultContent() {
+            searchResults.classList.add('hidden');
+            defaultContent.classList.remove('hidden');
+        }
+
+        // Search event listeners
+        searchBtn.addEventListener('click', () => {
+            performSearch(searchInput.value);
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch(searchInput.value);
+            }
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            if (e.target.value.trim() === '') {
+                showDefaultContent();
+            }
+        });
+
+        // Quick filter functionality
+        quickFilters.forEach(filter => {
+            filter.addEventListener('click', function() {
+                const searchTerm = this.getAttribute('data-search');
+                searchInput.value = searchTerm;
+                currentSearchType = 'course'; // Quick filters are course-related
+                
+                // Update active tab
+                searchTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-blue-600', 'text-white');
+                    t.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                document.getElementById('courseTab').classList.add('active', 'bg-blue-600', 'text-white');
+                document.getElementById('courseTab').classList.remove('bg-gray-200', 'text-gray-700');
+                
+                updatePlaceholder();
+                performSearch(searchTerm);
+            });
+        });
+
+        // Global search function for popular items
+        function searchFor(term) {
+            searchInput.value = term;
+            
+            // Determine search type based on term
+            if (searchData.countries.some(c => c.name === term)) {
+                currentSearchType = 'country';
+                document.getElementById('countryTab').click();
+            } else if (searchData.universities.some(u => u.name === term)) {
+                currentSearchType = 'university';
+                document.getElementById('universityTab').click();
+            } else {
+                currentSearchType = 'course';
+                document.getElementById('courseTab').click();
+            }
+            
+            performSearch(term);
+        }
+
+        // Chat Bot Functionality
+        const chatToggle = document.getElementById('chatToggle');
+        const chatWindow = document.getElementById('chatWindow');
+        const chatIcon = document.getElementById('chatIcon');
+        const closeIcon = document.getElementById('closeIcon');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendMessage = document.getElementById('sendMessage');
+        const quickQuestions = document.querySelectorAll('.quick-question');
+
+        // Chat bot responses database
+        const chatResponses = {
+            // Greetings
+            'hello': "Hello! I'm F57, your study abroad assistant. How can I help you today?",
+            'hi': "Hi there! I'm here to help you with your study abroad questions. What would you like to know?",
+            'hey': "Hey! I'm F57. I can help you with university information, visa processes, and more. What's on your mind?",
+            
+            // Country-specific questions with comprehensive information
+            'canada': "🇨🇦 **STUDY IN CANADA - COMPLETE GUIDE**\n\n🏛️ **TOP UNIVERSITIES**:\n• University of Toronto (World Rank #21)\n• McGill University (World Rank #31)\n• University of British Columbia (World Rank #40)\n• University of Waterloo (Top for Computer Science)\n• McMaster University (Health Sciences)\n\n📝 **ENGLISH REQUIREMENTS**:\n• IELTS: 6.5 overall (6.0 in each band)\n• TOEFL: 86-100 iBT\n• CAEL: 60-70 overall\n• Duolingo: 120-130 (increasingly accepted)\n\n💰 **COSTS (CAD)**:\n• Tuition: $12,000-$30,000/year\n• Living: $10,000-$15,000/year\n• Total: $22,000-$45,000/year\n\n🛂 **VISA REQUIREMENTS**:\n• Study Permit required\n• Acceptance letter from DLI\n• Financial proof ($10,000+ living expenses)\n• Medical exam (if required)\n• No criminal record\n\n✨ **WHY CANADA?**:\n• Pathway to Permanent Residency\n• Post-graduation work permit (up to 3 years)\n• Safe, multicultural society\n• Affordable compared to US/UK\n\n📞 **Ready to apply? Contact DTR Consultation for personalized guidance and application support! We'll help you choose the right university and program for your profile.**",
+            
+            'australia': "🇦🇺 **STUDY IN AUSTRALIA - COMPLETE GUIDE**\n\n🏛️ **TOP UNIVERSITIES**:\n• University of Melbourne (World Rank #33)\n• Australian National University (World Rank #34)\n• University of Sydney (World Rank #41)\n• University of Queensland (World Rank #50)\n• Monash University (World Rank #57)\n\n📝 **ENGLISH REQUIREMENTS**:\n• IELTS: 6.5 overall (6.0 in each band)\n• TOEFL: 79-94 iBT\n• PTE Academic: 58-65 overall\n• Cambridge: CAE Grade B\n\n💰 **COSTS (AUD)**:\n• Tuition: $20,000-$45,000/year\n• Living: $18,000-$25,000/year\n• Total: $38,000-$70,000/year\n\n🛂 **VISA REQUIREMENTS**:\n• Student Visa (Subclass 500)\n• Confirmation of Enrolment (CoE)\n• Financial capacity ($21,041/year)\n• Health insurance (OSHC)\n• English proficiency proof\n• Health examination\n\n✨ **WHY AUSTRALIA?**:\n• Post-study work visa (2-4 years)\n• High quality of life\n• Beautiful climate & lifestyle\n• Strong job market\n• Multicultural environment\n\n📞 **Want to study in Australia? Contact DTR Consultation now! Our experts will guide you through university selection, application process, and visa requirements.**",
+            
+            'uk': "🇬🇧 **STUDY IN UK - COMPLETE GUIDE**\n\n🏛️ **TOP UNIVERSITIES**:\n• University of Oxford (World Rank #4)\n• University of Cambridge (World Rank #5)\n• Imperial College London (World Rank #8)\n• UCL (World Rank #9)\n• London School of Economics\n\n📝 **ENGLISH REQUIREMENTS**:\n• IELTS: 6.5-7.0 overall (6.0-6.5 each band)\n• TOEFL: 90-100 iBT\n• PTE Academic: 62-70\n• Cambridge: CAE Grade B or CPE Grade C\n\n💰 **COSTS (GBP)**:\n• Tuition: £10,000-£38,000/year\n• Living: £12,000-£15,000/year\n• Total: £22,000-£53,000/year\n\n🛂 **VISA REQUIREMENTS**:\n• Student Visa (formerly Tier 4)\n• CAS from licensed sponsor\n• Financial proof (tuition + £1,334/month living)\n• English proficiency\n• TB test (if required)\n• Academic qualifications\n\n✨ **WHY UK?**:\n• World-renowned universities\n• Shorter degree duration (3 years)\n• Rich history & culture\n• Graduate Route visa (2 years post-study)\n• Gateway to Europe\n\n📞 **Dreaming of studying at Oxford or Cambridge? Contact DTR Consultation for expert guidance on UK applications, UCAS process, and visa support!**",
+            
+            'usa': "🇺🇸 **STUDY IN USA - COMPLETE GUIDE**\n\n🏛️ **TOP UNIVERSITIES**:\n• MIT (World Rank #1)\n• Harvard University (World Rank #3)\n• Stanford University (World Rank #2)\n• UC Berkeley\n• California Institute of Technology\n\n📝 **REQUIREMENTS**:\n• IELTS: 6.5-7.5 overall\n• TOEFL: 90-110 iBT\n• SAT/ACT (Undergraduate)\n• GRE/GMAT (Graduate)\n• Strong academic record (3.0+ GPA)\n\n💰 **COSTS (USD)**:\n• Tuition: $20,000-$60,000/year\n• Living: $15,000-$25,000/year\n• Total: $35,000-$85,000/year\n\n🛂 **VISA REQUIREMENTS**:\n• F-1 Student Visa\n• I-20 form from university\n• SEVIS fee payment\n• Financial proof (I-134 or bank statements)\n• Visa interview\n• Academic transcripts\n\n✨ **WHY USA?**:\n• World's top universities\n• Cutting-edge research facilities\n• Diverse academic programs\n• OPT work opportunities\n• Innovation & entrepreneurship hub\n\n📞 **Ready for the American dream? Contact DTR Consultation for comprehensive support with university selection, application essays, and F-1 visa process!**",
+            
+            'germany': "🇩🇪 **STUDY IN GERMANY - COMPLETE GUIDE**\n\n🏛️ **TOP UNIVERSITIES**:\n• Technical University of Munich (World Rank #50)\n• Ludwig Maximilian University\n• Heidelberg University\n• RWTH Aachen University\n• University of Freiburg\n\n📝 **REQUIREMENTS**:\n• English Programs: IELTS 6.0-6.5, TOEFL 80-90\n• German Programs: DSH-2 or TestDaF Level 4\n• Academic qualification equivalent to German Abitur\n• Motivation letter\n• CV in German format\n\n💰 **COSTS (EUR)**:\n• Tuition: €0-€3,000/year (public unis)\n• Living: €800-€1,200/month\n• Total: €10,000-€18,000/year\n\n🛂 **VISA REQUIREMENTS**:\n• Student Visa/Residence Permit\n• University admission letter\n• Financial proof (€10,332/year)\n• Health insurance\n• Academic certificates\n• Language proficiency proof\n\n✨ **WHY GERMANY?**:\n• FREE education at public universities\n• Strong engineering programs\n• Excellent job opportunities\n• Central location in Europe\n• Post-study work opportunities\n\n📞 **Interested in FREE education in Germany? Contact DTR Consultation for guidance on German university applications, language requirements, and visa process!**",
+            
+            'france': "🇫🇷 **STUDY IN FRANCE - COMPLETE GUIDE**\n\n🏛️ **TOP UNIVERSITIES**:\n• Sorbonne University (World Rank #72)\n• École Polytechnique\n• Sciences Po\n• HEC Paris\n• University of Paris\n\n📝 **REQUIREMENTS**:\n• English Programs: IELTS 6.0-6.5, TOEFL 79-90\n• French Programs: DELF B2/DALF C1, TCF 400+\n• Academic transcripts\n• Motivation letter\n• CV\n\n💰 **COSTS (EUR)**:\n• Tuition: €2,770-€3,770/year (EU), €3,770-€10,000 (Non-EU)\n• Living: €600-€1,000/month\n• Total: €10,000-€22,000/year\n\n🛂 **VISA REQUIREMENTS**:\n• Student Visa (VLS-TS)\n• Campus France procedure\n• Acceptance letter\n• Financial proof (€615/month)\n• Health insurance\n• Academic qualifications\n\n✨ **WHY FRANCE?**:\n• Rich cultural heritage\n• Affordable tuition fees\n• Excellence in arts, fashion, cuisine\n• Central location in Europe\n• Post-study work opportunities\n\n📞 **Want to experience French culture while studying? Contact DTR Consultation for guidance on French university applications and Campus France procedures!**",
+            
+            'japan': "🇯🇵 **STUDY IN JAPAN - COMPLETE GUIDE**\n\n🏛️ **TOP UNIVERSITIES**:\n• University of Tokyo (World Rank #23)\n• Kyoto University (World Rank #36)\n• Osaka University\n• Tokyo Institute of Technology\n• Waseda University\n\n📝 **REQUIREMENTS**:\n• English Programs: IELTS 6.0-6.5, TOEFL 79-90\n• Japanese Programs: JLPT N2-N1\n• EJU (Examination for Japanese University Admission)\n• Academic transcripts\n• Research proposal (for graduate)\n\n💰 **COSTS (JPY)**:\n• Tuition: ¥535,800-¥1,000,000/year\n• Living: ¥80,000-¥120,000/month\n• Total: ¥1,500,000-¥2,500,000/year\n\n🛂 **VISA REQUIREMENTS**:\n• Student Visa\n• Certificate of Eligibility (COE)\n• Acceptance letter\n• Financial proof\n• Academic certificates\n• Health certificate\n\n✨ **WHY JAPAN?**:\n• Technology & innovation leader\n• Unique cultural experience\n• Strong job market\n• Excellent research facilities\n• Safe society\n\n📞 **Fascinated by Japanese technology and culture? Contact DTR Consultation for guidance on Japanese university applications, MEXT scholarships, and visa process!**",
+            
+            'new zealand': "🇳🇿 **STUDY IN NEW ZEALAND - COMPLETE GUIDE**\n\n🏛️ **TOP UNIVERSITIES**:\n• University of Auckland (World Rank #85)\n• University of Otago\n• Victoria University of Wellington\n• University of Canterbury\n• Massey University\n\n📝 **REQUIREMENTS**:\n• IELTS: 6.0-6.5 overall (5.5-6.0 each band)\n• TOEFL: 79-90 iBT\n• Academic transcripts\n• Personal statement\n• References\n\n💰 **COSTS (NZD)**:\n• Tuition: $22,000-$35,000/year\n• Living: $15,000-$18,000/year\n• Total: $37,000-$53,000/year\n\n🛂 **VISA REQUIREMENTS**:\n• Student Visa\n• Offer of Place\n• Financial proof ($15,000/year)\n• Health insurance\n• Medical examination\n• Character requirements\n\n✨ **WHY NEW ZEALAND?**:\n• Beautiful natural environment\n• High quality education\n• Safe and friendly society\n• Post-study work visa (up to 3 years)\n• Pathway to residency\n\n📞 **Love adventure and quality education? Contact DTR Consultation for New Zealand university applications and visa guidance!**",
+            
+            'south korea': "🇰🇷 **STUDY IN SOUTH KOREA - COMPLETE GUIDE**\n\n🏛️ **TOP UNIVERSITIES**:\n• Seoul National University (World Rank #36)\n• KAIST (World Rank #41)\n• Yonsei University\n• Korea University\n• POSTECH\n\n📝 **REQUIREMENTS**:\n• English Programs: IELTS 6.0-6.5, TOEFL 79-90\n• Korean Programs: TOPIK Level 3-4\n• Academic transcripts\n• Personal statement\n• Letters of recommendation\n\n💰 **COSTS (KRW)**:\n• Tuition: ₩4,000,000-₩12,000,000/year\n• Living: ₩700,000-₩1,000,000/month\n• Total: ₩12,000,000-₩24,000,000/year\n\n🛂 **VISA REQUIREMENTS**:\n• Student Visa (D-2)\n• Acceptance letter\n• Financial proof\n• Health certificate\n• Criminal background check\n• Academic certificates\n\n✨ **WHY SOUTH KOREA?**:\n• Technology & innovation hub\n• Strong job market\n• Vibrant K-culture (K-pop, K-drama)\n• Excellent research facilities\n• Growing global influence\n\n📞 **Interested in K-culture and technology? Contact DTR Consultation for Korean university applications and KGSP scholarship guidance!**",
+            
+            'singapore': "🇸🇬 **STUDY IN SINGAPORE - COMPLETE GUIDE**\n\n🏛️ **TOP UNIVERSITIES**:\n• National University of Singapore (World Rank #11)\n• Nanyang Technological University (World Rank #26)\n• Singapore Management University\n• Singapore University of Technology and Design\n\n📝 **REQUIREMENTS**:\n• IELTS: 6.5-7.0 overall\n• TOEFL: 90-100 iBT\n• Strong academic record\n• SAT/A-Levels (Undergraduate)\n• GRE/GMAT (Graduate)\n\n💰 **COSTS (SGD)**:\n• Tuition: $17,000-$45,000/year\n• Living: $800-$1,500/month\n• Total: $27,000-$63,000/year\n\n🛂 **VISA REQUIREMENTS**:\n• Student Pass\n• In-Principle Approval (IPA)\n• Financial proof\n• Medical examination\n• Academic certificates\n\n✨ **WHY SINGAPORE?**:\n• Gateway to Asia\n• Multicultural society\n• Strong economy\n• High quality of life\n• English-speaking environment\n\n📞 **Want to study in Asia's education hub? Contact DTR Consultation for Singapore university applications and scholarship opportunities!**",
+            
+            'netherlands': "🇳🇱 **STUDY IN NETHERLANDS - COMPLETE GUIDE**\n\n🏛️ **TOP UNIVERSITIES**:\n• University of Amsterdam (World Rank #58)\n• Delft University of Technology (World Rank #57)\n• Utrecht University\n• Leiden University\n• Erasmus University Rotterdam\n\n📝 **REQUIREMENTS**:\n• IELTS: 6.0-6.5 overall\n• TOEFL: 80-90 iBT\n• Academic transcripts\n• Motivation letter\n• CV\n\n💰 **COSTS (EUR)**:\n• Tuition: €2,168 (EU), €6,000-€20,000 (Non-EU)\n• Living: €800-€1,200/month\n• Total: €12,000-€35,000/year\n\n🛂 **VISA REQUIREMENTS**:\n• Student Visa/Residence Permit\n• Acceptance letter\n• Financial proof (€10,800/year)\n• Health insurance\n• Academic qualifications\n\n✨ **WHY NETHERLANDS?**:\n• High-quality education\n• English-taught programs\n• Innovative teaching methods\n• Central location in Europe\n• Bike-friendly culture\n\n📞 **Interested in Dutch innovation and culture? Contact DTR Consultation for Netherlands university applications and visa guidance!**",
+            
+            // Application process
+            'application': "📋 **UNIVERSITY APPLICATION PROCESS**\n\n**STEP-BY-STEP GUIDE**:\n1. **Research & Shortlist** - Choose 5-8 universities\n2. **Prepare Documents** - Transcripts, SOP, LORs\n3. **English Tests** - IELTS/TOEFL/PTE\n4. **Standardized Tests** - SAT/GRE/GMAT (if required)\n5. **Submit Applications** - Online portals\n6. **Wait for Results** - 4-12 weeks\n7. **Accept Offer** - Pay deposit\n8. **Visa Process** - After acceptance\n9. **Pre-departure** - Accommodation, travel\n\n**REQUIRED DOCUMENTS**:\n• Academic transcripts\n• Degree certificates\n• English test scores\n• Statement of Purpose\n• Letters of Recommendation\n• CV/Resume\n• Passport copy\n• Financial statements\n\n📞 **Need help with applications? Contact DTR Consultation for end-to-end application support and increase your chances of acceptance!**",
+            
+            'documents': "📄 **REQUIRED DOCUMENTS FOR STUDY ABROAD**\n\n**ACADEMIC DOCUMENTS**:\n• Official transcripts (sealed)\n• Degree certificates\n• Academic records/marksheets\n• WES/ECE evaluation (if required)\n\n**APPLICATION ESSAYS**:\n• Statement of Purpose (SOP)\n• Letters of Recommendation (2-3)\n• Personal Statement\n• Research Proposal (for PhD)\n\n**OTHER REQUIREMENTS**:\n• English test scores (IELTS/TOEFL/PTE)\n• Passport copy\n• Financial statements/bank statements\n• CV/Resume\n• Portfolio (for creative programs)\n• Work experience certificates\n\n📞 **Need help preparing documents? Contact DTR Consultation for professional SOP writing, document verification, and application review services!**",
+            
+            // Visa information
+            'visa': "🛂 **STUDENT VISA REQUIREMENTS BY COUNTRY**\n\n🇨🇦 **Canada - Study Permit**:\n• Acceptance letter from DLI\n• Financial proof ($10,000+ living)\n• Medical exam (if required)\n• No criminal record\n\n🇦🇺 **Australia - Student Visa (500)**:\n• CoE from university\n• Financial capacity ($21,041/year)\n• Health insurance (OSHC)\n• English proficiency\n• Health examination\n\n🇬🇧 **UK - Student Visa**:\n• CAS from licensed sponsor\n• Financial proof (tuition + £1,334/month)\n• TB test (if required)\n• English proficiency\n\n🇺🇸 **USA - F-1 Student Visa**:\n• I-20 form from university\n• SEVIS fee payment\n• Financial proof (I-134)\n• Visa interview\n\n🇩🇪 **Germany - Student Visa**:\n• University admission letter\n• Financial proof (€10,332/year)\n• Health insurance\n• Language proficiency\n\n📞 **Visa process can be complex! Contact DTR Consultation for expert visa guidance and interview preparation to maximize your approval chances!**",
+            
+            // Costs
+            'cost': "💰 **STUDY ABROAD COSTS BY COUNTRY**\n\n**TUITION FEES (Annual)**:\n• 🇺🇸 USA: $20,000-$60,000\n• 🇬🇧 UK: £10,000-£38,000\n• 🇦🇺 Australia: AUD $20,000-$45,000\n• 🇨🇦 Canada: CAD $12,000-$30,000\n• 🇩🇪 Germany: €0-€3,000 (public unis)\n• 🇫🇷 France: €2,770-€10,000\n• 🇳🇱 Netherlands: €6,000-€20,000\n\n**LIVING EXPENSES (Monthly)**:\n• Major cities: $1,200-$2,500\n• Smaller cities: $800-$1,500\n\n**TOTAL BUDGET (Annual)**:\n• USA: $35,000-$85,000\n• UK: £22,000-£53,000\n• Australia: AUD $38,000-$70,000\n• Canada: CAD $22,000-$45,000\n• Germany: €10,000-€18,000\n\n📞 **Need help with financial planning? Contact DTR Consultation for detailed cost analysis and scholarship opportunities to make your dream affordable!**",
+            
+            // Scholarships
+            'scholarship': "🎓 **SCHOLARSHIP OPPORTUNITIES FOR INTERNATIONAL STUDENTS**\n\n**GOVERNMENT SCHOLARSHIPS**:\n• 🇺🇸 Fulbright Program\n• 🇬🇧 Chevening Scholarships\n• 🇦🇺 Australia Awards\n• 🇩🇪 DAAD Scholarships\n• 🇨🇦 Vanier Canada Graduate Scholarships\n• 🇫🇷 Eiffel Excellence Scholarships\n• 🇰🇷 KGSP (Korean Government)\n• 🇯🇵 MEXT Scholarships\n\n**UNIVERSITY SCHOLARSHIPS**:\n• Merit-based scholarships (up to 100% tuition)\n• Need-based financial aid\n• Research assistantships\n• Teaching assistantships\n\n**PRIVATE SCHOLARSHIPS**:\n• Rotary Foundation\n• Ford Foundation\n• Gates Cambridge\n• Rhodes Scholarships\n\n**SCHOLARSHIP AMOUNTS**:\n• Full scholarships: Cover tuition + living\n• Partial scholarships: $5,000-$25,000\n• Research grants: $10,000-$50,000\n\n📞 **Want to study for FREE? Contact DTR Consultation for personalized scholarship search and application assistance. We've helped students secure over $50 million in scholarships!**",
+            
+            // Requirements
+            'requirements': "📋 **GENERAL ADMISSION REQUIREMENTS**\n\n**ACADEMIC REQUIREMENTS**:\n• Good grades (60%+ or 3.0+ GPA)\n• Relevant academic background\n• Prerequisite courses completed\n\n**ENGLISH PROFICIENCY**:\n• IELTS: 6.0-7.5 overall\n• TOEFL: 79-110 iBT\n• PTE Academic: 58-79\n• Duolingo: 105-130\n\n**STANDARDIZED TESTS**:\n• SAT/ACT (Undergraduate US)\n• GRE (Graduate programs)\n• GMAT (MBA programs)\n• Subject-specific tests\n\n**FINANCIAL REQUIREMENTS**:\n• Proof of funds for tuition\n• Living expense coverage\n• Bank statements\n• Sponsor affidavit\n\n**DOCUMENTS NEEDED**:\n• Statement of Purpose\n• Letters of Recommendation\n• Academic transcripts\n• CV/Resume\n• Passport\n\n📞 **Not sure if you qualify? Contact DTR Consultation for FREE profile evaluation and personalized guidance on meeting admission requirements!**",
+            
+            // Default responses
+            'default': "🤖 **I'm here to help with your study abroad journey!**\n\nI can assist you with:\n• 🌍 Country & university information\n• 📋 Application requirements & process\n• 🛂 Visa guidance & requirements\n• 💰 Costs & scholarship opportunities\n• 📄 Document preparation\n• 🎯 Profile evaluation\n\n**Popular Questions:**\n• \"Tell me about studying in Canada\"\n• \"What are the requirements for Australia?\"\n• \"How much does it cost to study in USA?\"\n• \"What scholarships are available?\"\n\n📞 **For detailed guidance, contact DTR Consultation - your trusted study abroad partner!**\n\nWhat specific information would you like to know?",
+            
+            'thanks': "You're very welcome! 😊\n\nI'm glad I could help with your study abroad questions. Remember:\n\n✅ Start your applications early\n✅ Prepare for English tests in advance\n✅ Research scholarship opportunities\n✅ Get professional guidance for best results\n\n📞 **For personalized support throughout your journey, contact DTR Consultation. We're here to make your study abroad dreams come true!**\n\nFeel free to ask more questions anytime!",
+            
+            'thank you': "You're absolutely welcome! 🎓\n\nI'm here to support your study abroad aspirations. Good luck with your applications!\n\n**Next Steps:**\n1. Research your preferred countries\n2. Prepare for English tests\n3. Start gathering documents\n4. Apply for scholarships\n\n📞 **Ready to take the next step? Contact DTR Consultation for expert guidance and increase your chances of success!**\n\nI'm always here if you need more assistance!"
+        };
+
+        // Toggle chat window
+        chatToggle.addEventListener('click', function() {
+            const isHidden = chatWindow.classList.contains('hidden');
+            
+            if (isHidden) {
+                chatWindow.classList.remove('hidden');
+                chatIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                chatWindow.classList.add('hidden');
+                chatIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        });
+
+        // Add message to chat
+        function addMessage(message, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `flex items-start space-x-2 ${isUser ? 'justify-end' : ''}`;
+            
+            if (isUser) {
+                messageDiv.innerHTML = `
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-3 rounded-lg shadow-sm max-w-xs">
+                        <p class="text-sm">${message}</p>
+                    </div>
+                    <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-xs font-bold">
+                        You
+                    </div>
+                `;
+            } else {
+                messageDiv.innerHTML = `
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                        F57
+                    </div>
+                    <div class="bg-white p-3 rounded-lg shadow-sm max-w-xs">
+                        <p class="text-sm text-gray-800 whitespace-pre-line">${message}</p>
+                    </div>
+                `;
+            }
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Get bot response
+        function getBotResponse(userMessage) {
+            const message = userMessage.toLowerCase().trim();
+            
+            // Check for exact matches first
+            if (chatResponses[message]) {
+                return chatResponses[message];
+            }
+            
+            // Check for partial matches
+            for (const key in chatResponses) {
+                if (message.includes(key)) {
+                    return chatResponses[key];
+                }
+            }
+            
+            // Special handling for specific questions
+            if (message.includes('cost') || message.includes('fee') || message.includes('expensive')) {
+                return chatResponses['cost'];
+            }
+            
+            if (message.includes('requirement') || message.includes('need') || message.includes('qualify')) {
+                return chatResponses['requirements'];
+            }
+            
+            if (message.includes('scholarship') || message.includes('funding') || message.includes('financial aid')) {
+                return chatResponses['scholarship'];
+            }
+            
+            if (message.includes('document') || message.includes('paper') || message.includes('certificate')) {
+                return chatResponses['documents'];
+            }
+            
+            if (message.includes('apply') || message.includes('application')) {
+                return chatResponses['application'];
+            }
+            
+            // Default response
+            return chatResponses['default'];
+        }
+
+        // Send message function
+        function sendChatMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+            
+            // Add user message
+            addMessage(message, true);
+            chatInput.value = '';
+            
+            // Show typing indicator
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addMessage(response, false);
+            }, 1000);
+        }
+
+        // Send message on button click
+        sendMessage.addEventListener('click', sendChatMessage);
+
+        // Send message on Enter key
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendChatMessage();
+            }
+        });
+
+        // Quick question buttons
+        quickQuestions.forEach(button => {
+            button.addEventListener('click', function() {
+                const question = this.getAttribute('data-question');
+                addMessage(question, true);
+                
+                setTimeout(() => {
+                    const response = getBotResponse(question);
+                    addMessage(response, false);
+                }, 1000);
+            });
+        });
+    </script>
+    <script>
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML = "window.__CF$cv$params={r:'9653becf06d8daf3',t:'MTc1MzUzMTMxNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>
